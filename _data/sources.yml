@@ -1,0 +1,8 @@
+- name: eRecht24
+  url: https://www.e-recht24.de
+- name: Jekyll
+  url: https://jekyllrb.com
+- name: Bootstrap
+  url: https://getbootstrap.com
+- name: Gitlab Pages
+  url: https://about.gitlab.com/features/pages/

@@ -4,6 +4,70 @@ title: Impressum
 ---
 <div class="container">
   <div class="col-12">
-    {% include imprint.html %}
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <h2 class="section-title">
+          <span>
+            <i class="material-icons">star</i>
+            Impressum
+          </span>
+        </h2>
+        <div class="card">
+          <picture class="card-img-top">
+              <source srcset="assets/logo-dark.png" media="(prefers-color-scheme: dark)">
+              <img src="assets/logo.png" class="w-100">
+          </picture>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-6">
+                <p class="flow-text">
+                  {{ site.contact.name }}<br>
+                  {{ site.contact.company }}
+                </p>
+              </div>
+              <div class="col-6">
+                <p class="flow-text">
+                  {{ site.contact.street }}<br>
+                  {{ site.contact.zip }} {{ site.contact.city }}<br>
+                  {{ site.contact.country }}
+                </p>
+              </div>
+            </div>
+            <p>E-Mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <h2 class="section-title">
+          <span>
+            <i class="material-icons">attach_file</i>
+            Quellen
+          </span>
+        </h2>
+        <div class="text-center list-group">
+          {% for source in site.data.sources %}
+          <a class="list-group-item" href="{{ source.url }}" target="_blank" rel="noopener">{{ source.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <h2 class="section-title">
+      <span>
+        <i class="material-icons">gavel</i>
+        Datenschutz
+      </span>
+    </h2>
+    <div id="grid" data-columns>
+      {% for section in site.data.privacy_sections %}
+      <div class="item">
+        <div class="card">
+          <div class="card-body">
+            <span class="card-title">{{ section.title }}</span>
+            {{ section.body }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </div>

@@ -6,9 +6,24 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: makeitSYSTEMS 
+title: makeitSYSTEMS
 email: info@makeitsystems.de
 url: "/" # the base hostname & protocol for your site
+
+# Kontaktdaten, damit sie an einer Stelle gepflegt und per {{ site.contact.* }}
+# (z.B. auf der Impressum-Seite) eingebunden werden statt fest im HTML zu stehen.
+contact:
+  name: Mathias Kessler
+  company: MaKeIT SYSTEMS
+  street: Hardenbergstraße 11
+  zip: "72768"
+  city: Reutlingen
+  country: Deutschland
+  domain: makeitsystems.de
+
+# Startjahr für das dynamische Copyright im Footer (siehe footer.html) –
+# das aktuelle Jahr wird zur Build-Zeit automatisch ergänzt.
+copyright_start_year: 2019
 
 # Build settings.
 markdown: kramdown

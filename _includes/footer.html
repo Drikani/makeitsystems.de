@@ -7,6 +7,13 @@
     </div>
   </div>
   <div class="footer-copyright">
-    <span class="text-white">makeitsystems.de © 2021</span>
+    {%- assign current_year = "now" | date: "%Y" -%}
+    {%- assign start_year = site.copyright_start_year | append: "" -%}
+    <span class="text-white">
+      {{- site.contact.domain }} &copy;
+      {%- if start_year == current_year %} {{ current_year }}
+      {%- else %} {{ start_year }}&ndash;{{ current_year }}
+      {%- endif -%}
+    </span>
   </div>
 </footer>
