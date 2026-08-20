@@ -3,7 +3,8 @@
 @charset "UTF-8";
 
 // Colors
-@import "color";
+@import "color-variables";
+@import "color-classes";
 
 // Variables;
 @import "variables";
@@ -40,12 +41,11 @@
 @import "materialbox";
 @import "forms/forms";
 @import "table_of_contents";
-@import "sideNav";
+@import "sidenav";
 @import "preloader";
 @import "slider";
 @import "carousel";
 @import "tapTarget";
 @import "pulse";
-@import "date_picker/default";
-@import "date_picker/default.date";
-@import "date_picker/default.time";
+@import "datepicker";
+@import "timepicker";

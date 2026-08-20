@@ -1,3 +1,11 @@
+// 0. Fonts
+// ==========================================================================
+// Materialize 1.0.0 dropped the bundled Roboto font-face/path; this project
+// still self-hosts Roboto (see _roboto.scss and fonts/roboto/), so restore
+// these on top of the upstream default of a system-font stack.
+$font-stack: "Roboto", sans-serif;
+$roboto-font-path: "../fonts/roboto/";
+
 // 1. Theme - Light
 // ==========================================================================
 $lt-text-color: color("blue-grey", "darken-4") !default;

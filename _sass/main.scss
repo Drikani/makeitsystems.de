@@ -3,6 +3,12 @@ body {
   background-color: $lt-background-color;
 }
 
+// Materialize 1.0.0 dropped the base font-weight for .flow-text
+// (it now only sets weight inside its responsive breakpoints).
+.flow-text {
+  font-weight: 300;
+}
+
 a {
   &:link {
   color: $lt-color-primary;
@@ -28,6 +34,8 @@ footer {
   .footer-copyright {
     background-color: $lt-color-accent !important;
     padding: 10px 0;
+    // Materialize 1.0.0 dropped "@extend .light" from .footer-copyright.
+    font-weight: 300;
   }
 }
 
