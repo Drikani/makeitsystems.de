@@ -33,24 +33,17 @@
         }
     }
 
-    .collection {
+    .list-group-item {
         border: 1px solid $dt-shade-darken-4 !important;
-        .collection-item {
-            border-bottom: 1px solid $dt-shade-darken-4 !important;
+        color: $dt-color-alt !important;
+        background-color: $dt-bg-color-alt1 !important;
+        &:visited {
+            color: $dt-color-alt !important;
+            background-color: $dt-bg-color-alt1 !important;
         }
-        a {
-            &.collection-item {
-                color: $dt-color-alt !important;
-                background-color: $dt-bg-color-alt1 !important;
-                &:visited{
-                    color: $dt-color-alt !important;
-                    background-color: $dt-bg-color-alt1 !important;
-                }
-                &:hover {
-                    color: $dt-color-alt !important;
-                    background-color: $dt-bg-color-alt2 !important;
-                } 
-            }    
+        &:hover {
+            color: $dt-color-alt !important;
+            background-color: $dt-bg-color-alt2 !important;
         }
     }
 
@@ -81,24 +74,19 @@
     .navtabs {
     padding-right: 0px !important;
     padding-left: 0px !important;
-    .tabs {
+    .nav-tabs {
         background-color: $dt-color-accent !important;
-        .tab {
-        a {
+        .nav-link {
             color: color("shades", "white") !important;
             &:hover {
-            color: $dt-shade-lighten-5 !important;
+                color: $dt-shade-lighten-5 !important;
             }
             &.active {
-            color: $dt-shade-lighten-5 !important;
+                color: $dt-shade-lighten-5 !important;
+                border-bottom-color: color("shades", "white") !important;
             }
         }
-        }
-        .indicator {
-        background-color: color("shades", "white");
-        }
     }
-
     }
 
     .logo {

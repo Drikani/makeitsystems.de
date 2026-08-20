@@ -21,3 +21,6 @@ plugins: ['jekyll-twitter-plugin']
 sass:
   sass_dir: _sass
   style: compact
+  # Unterdrückt Deprecation-Warnungen aus Abhängigkeiten (Bootstrap-Gem);
+  # ohne das erzeugt die schiere Menge an Warnungen einen Compile-Fehler.
+  quiet_deps: true

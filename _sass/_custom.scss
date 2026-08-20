@@ -1,10 +1,42 @@
+// Entspricht Materializes bisheriger Basis-Schriftgröße (14/14.5/15px statt
+// Bootstraps 16px), damit die rem-basierten Überschriften (main-variables.scss)
+// wieder auf dieselbe Pixelgröße kommen.
+html {
+  font-size: 14px;
+  @include media-breakpoint-up(lg) {
+    font-size: 14.5px;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 15px;
+  }
+}
+
+// Entspricht Materializes bisherigem Überschriften-Abstand (Formel: Größe/1.5
+// oben, Größe/2.5 unten), Bootstraps Reboot setzt sonst nur margin-bottom.
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+// (entspricht der ursprünglichen Formel Größe/1.5 bzw. Größe/2.5)
+h1 { margin: $h1-font-size * 0.6667 0 $h1-font-size * 0.4 0; }
+h2 { margin: $h2-font-size * 0.6667 0 $h2-font-size * 0.4 0; }
+h3 { margin: $h3-font-size * 0.6667 0 $h3-font-size * 0.4 0; }
+h4 { margin: $h4-font-size * 0.6667 0 $h4-font-size * 0.4 0; }
+h5 { margin: $h5-font-size * 0.6667 0 $h5-font-size * 0.4 0; }
+h6 { margin: $h6-font-size * 0.6667 0 $h6-font-size * 0.4 0; }
+
+// Bootstrap lädt keine eigene Icon-Schrift; Material Icons kommt aus dem
+// Google-Fonts-Link in head.html, dieser Zusatz ist nur für mobile Browser.
+.material-icons {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga";
+}
+
 body {
   color: $lt-text-color;
   background-color: $lt-background-color;
 }
 
-// Materialize 1.0.0 dropped the base font-weight for .flow-text
-// (it now only sets weight inside its responsive breakpoints).
 .flow-text {
   font-weight: 300;
 }
@@ -39,20 +71,16 @@ footer {
   }
 }
 
-.collection {
-  a {
-      &.collection-item {
-          color: $lt-color-primary !important;
-          background-color: $lt-bg-color-alt !important;
-          &:visited{
-            color: $lt-color-primary !important;
-            background-color: $lt-bg-color-alt !important;
-          }
-          &:hover {
-            color: $lt-color-primary !important;
-            background-color: $lt-shade-lighten-4 !important;
-          }
-      }    
+.list-group-item {
+  color: $lt-color-primary !important;
+  background-color: $lt-bg-color-alt !important;
+  &:visited {
+    color: $lt-color-primary !important;
+    background-color: $lt-bg-color-alt !important;
+  }
+  &:hover {
+    color: $lt-color-primary !important;
+    background-color: $lt-shade-lighten-4 !important;
   }
 }
 
@@ -83,24 +111,26 @@ footer {
 .navtabs {
   padding-right: 0px !important;
   padding-left: 0px !important;
-  .tabs {
+  .nav-tabs {
     background-color: $lt-color-accent !important;
-    .tab {
-      a {
-        color: color("shades", "white");
-        &:hover {
-          color: $lt-shade-lighten-5;
-        }
-        &.active {
-          color: $lt-shade-lighten-5;
-        }
+    border-bottom: none;
+    flex-wrap: nowrap;
+    .nav-link {
+      border: none;
+      border-radius: 0;
+      border-bottom: 3px solid transparent;
+      color: color("shades", "white");
+      text-align: center;
+      &:hover {
+        color: $lt-shade-lighten-5;
+      }
+      &.active {
+        color: $lt-shade-lighten-5;
+        background-color: transparent;
+        border-bottom-color: color("shades", "white");
       }
     }
-    .indicator {
-      background-color: color("shades", "white");
-    }
   }
-
 }
 
 .logo {
@@ -147,7 +177,17 @@ footer {
   color: $lt-color-primary;
 }
 
+// Bootstrap kennt keine Chips; Maße entsprechen Materializes bisherigem .chip.
 .chip {
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 12px;
+  margin: 0 8px 8px 0;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: $box-shadow-sm;
   background-color: $lt-color-primary !important;
   color: $lt-shade-lighten-2 !important;
 }

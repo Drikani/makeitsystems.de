@@ -1,10 +1,24 @@
-// 0. Fonts
+// 0. Bootstrap-Overrides
 // ==========================================================================
-// Materialize 1.0.0 dropped the bundled Roboto font-face/path; this project
-// still self-hosts Roboto (see _roboto.scss and fonts/roboto/), so restore
-// these on top of the upstream default of a system-font stack.
-$font-stack: "Roboto", sans-serif;
+// Muss vor "bootstrap/variables" importiert werden (siehe css/main.scss),
+// damit die "!default"-Werte von Bootstrap durch unsere Werte ersetzt werden.
+//
+// Dieses Projekt hostet Roboto selbst (siehe _roboto.scss und
+// fonts/roboto/) statt Bootstraps System-Font-Stack zu nutzen.
+$font-family-sans-serif: "Roboto", sans-serif;
 $roboto-font-path: "../fonts/roboto/";
+
+// Entspricht der bisherigen Materialize-Schriftgrößen-Skala (14px-Basis
+// statt Bootstraps 16px, samt Responsive-Anpassung, siehe main.scss).
+$h1-font-size: 4.2rem;
+$h2-font-size: 3.56rem;
+$h3-font-size: 2.92rem;
+$h4-font-size: 2.28rem;
+$h5-font-size: 1.64rem;
+$h6-font-size: 1.15rem;
+$headings-font-weight: 400;
+$headings-line-height: 1.3;
+$headings-margin-bottom: 0;
 
 // 1. Theme - Light
 // ==========================================================================
