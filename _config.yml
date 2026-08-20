@@ -8,7 +8,12 @@
 # Site settings
 title: makeitSYSTEMS
 email: info@makeitsystems.de
-url: "/" # the base hostname & protocol for your site
+description: "makeitSYSTEMS – private Website von Mathias Kessler mit Lebenslauf, Impressum und mehr."
+lang: de
+# Wird als GitHub-Pages-Projektseite ohne eigene Domain ausgeliefert
+# (siehe .github/workflows/pages.yml), daher Repo-Name als baseurl.
+url: "https://drikani.github.io"
+baseurl: "/makeitsystems.de"
 
 # Kontaktdaten, damit sie an einer Stelle gepflegt und per {{ site.contact.* }}
 # (z.B. auf der Impressum-Seite) eingebunden werden statt fest im HTML zu stehen.
