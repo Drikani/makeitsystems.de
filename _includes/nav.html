@@ -1,7 +1,7 @@
 <div class="navtabs col-12 shadow">
   <ul class="nav nav-tabs nav-fill">
-    <li class="nav-item"><a class="nav-link active" href="#me">Über mich</a></li>
-    <li class="nav-item"><a class="nav-link" href="#resume">Lebenslauf</a></li>
-    <li class="nav-item"><a class="nav-link" href="#imprint">Impressum</a></li>
+    <li class="nav-item"><a class="nav-link{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">Über mich</a></li>
+    <li class="nav-item"><a class="nav-link{% if page.url == '/lebenslauf.html' %} active{% endif %}" href="{{ site.baseurl }}/lebenslauf.html">Lebenslauf</a></li>
+    <li class="nav-item"><a class="nav-link{% if page.url == '/impressum.html' %} active{% endif %}" href="{{ site.baseurl }}/impressum.html">Impressum</a></li>
   </ul>
 </div>

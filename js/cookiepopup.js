@@ -252,6 +252,7 @@ $(document).ready( function() {
 	if ($(".eupopup").length > 0) {
 		$(document).euCookieLawPopup().init({
 			'info' : 'YOU_CAN_ADD_MORE_SETTINGS_HERE',
+			'cookiePolicyUrl' : '/impressum.html',
 			'popupTitle' : 'Diese Website verwendet Cookies.',
 			'popupText' : 'Wir verwenden Cookies für die best mögliche Erfahrung auf unserer Website. Wenn Sie mehr darüber erfahren möchten, klicken Sie im Menü auf Impressum. Bitte lesen Sie auch unsere restlichen Erläuterungen zum Thema Datenschutz durch.'
 		});
