@@ -1,0 +1,62 @@
+name: Release erstellen
+
+# Läuft beim Push nach main (üblicherweise ein Fast-Forward-Merge von
+# develop). Der Changelog listet alle Commits seit dem letzten Release-Tag –
+# das setzt voraus, dass main nur per Fast-Forward von develop aktualisiert
+# wird (keine eigenständigen Commits direkt auf main, keine Merge-Commits),
+# sonst stimmt "Änderungen seit dem letzten Release" nicht mit "Änderungen
+# auf develop seit dem letzten Release" überein.
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code mit vollständiger Historie auschecken (für Tags/Changelog)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Release-Tag bestimmen
+        id: vars
+        run: |
+          base_tag="v$(date +'%Y.%m.%d')"
+          tag="$base_tag"
+          n=2
+          while git rev-parse "$tag" >/dev/null 2>&1; do
+            tag="${base_tag}.${n}"
+            n=$((n + 1))
+          done
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+          last_tag="$(git describe --tags --abbrev=0 2>/dev/null || true)"
+          echo "last_tag=$last_tag" >> "$GITHUB_OUTPUT"
+
+      - name: Changelog aus den Commits seit dem letzten Release erzeugen
+        run: |
+          {
+            if [ -n "${{ steps.vars.outputs.last_tag }}" ]; then
+              echo "Änderungen seit ${{ steps.vars.outputs.last_tag }}:"
+              echo ""
+              git log "${{ steps.vars.outputs.last_tag }}..HEAD" --no-merges --pretty=format:'- %s (%h)'
+            else
+              echo "Erstes Release."
+              echo ""
+              git log --no-merges --pretty=format:'- %s (%h)'
+            fi
+          } > changelog.md
+
+      - name: Release veröffentlichen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ steps.vars.outputs.tag }}" \
+            --title "${{ steps.vars.outputs.tag }}" \
+            --notes-file changelog.md \
+            --target main
