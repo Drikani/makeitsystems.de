@@ -1,25 +1,25 @@
-- icon: web
+- icon: globe
   title: Webgestaltung
   text: >
     Neben meinem Beruf in der IT gestalte ich auch privat gerne Websites –
     diese Seite hier ist eines meiner eigenen Projekte. Auch für den
     Musikverein Hart e.V. und die Wonderbrass GbR habe ich den Webauftritt bereits komplett neu gestaltet.
 
-- icon: dns
+- icon: server
   title: Homelab
   text: >
     Zuhause betreibe ich ein eigenes Homelab, auf dem ich mit Docker und
     diversen selbstgehosteten Diensten experimentiere. Ein toller Ausgleich,
     um Neues rund um Server, Netzwerke und Automatisierung auszuprobieren.
 
-- icon: music_note
+- icon: music
   title: Musik
   text: >
     Musik begleitet mich schon mein ganzes Leben: Ich spiele Horn, Trompete
     und Tuba, bin Vorstandsmitglied im Musikverein Hart und zusätzlich
     Mitglied in einer Brassband.
 
-- icon: sports_esports
+- icon: gamepad
   title: Gaming
   text: >
     Zum Abschalten zocke ich gerne – von World of Warcraft über Minecraft
@@ -32,7 +32,7 @@
     Als Ausgleich zum stressigen Alltag liebe ich es, in Thermen
     und der Sauna abzuschalten und neue Energie zu tanken.
 
-- icon: restaurant
+- icon: utensils
   title: Kulinarik
   text: >
     Ich bin absoluter Genussmensch und probiere gerne neue Restaurants und

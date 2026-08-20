@@ -8,6 +8,12 @@
 $font-family-sans-serif: "Roboto", sans-serif;
 $roboto-font-path: "../fonts/roboto/";
 
+// Font Awesome: eigener Pfad statt des Gem-Standards "../webfonts" (siehe
+// _plugins/font_awesome_sass.rb, das die Schriftdateien dorthin kopiert).
+// Kein abschließender Slash: fa-font-path() in _functions.scss hängt selbst
+// noch einen an, mit Slash hier gäbe es sonst einen doppelten.
+$fa-font-path: "../fonts/font-awesome";
+
 // Entspricht der bisherigen Materialize-Schriftgrößen-Skala (14px-Basis
 // statt Bootstraps 16px, samt Responsive-Anpassung, siehe main.scss).
 $h1-font-size: 4.2rem;

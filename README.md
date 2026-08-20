@@ -7,7 +7,7 @@ Quellcode der privaten Website von Mathias Kessler ([makeitSYSTEMS](https://drik
 ## Tech-Stack
 
 - [Jekyll](https://jekyllrb.com) 4.4 (Ruby, statischer Seitengenerator)
-- [Bootstrap](https://getbootstrap.com) 5 als Ruby-Gem eingebunden (siehe [_plugins/bootstrap_sass.rb](_plugins/bootstrap_sass.rb)), keine vendorten Dateien
+- [Bootstrap](https://getbootstrap.com) 5 und [Font Awesome](https://fontawesome.com) 6 (Icons) als Ruby-Gems eingebunden (siehe [_plugins/](_plugins)), keine vendorten Dateien und kein CDN-Aufruf zu Drittanbietern
 - Kein JavaScript – die Seite ist komplett statisches HTML/CSS
 
 ## Lokale Entwicklung

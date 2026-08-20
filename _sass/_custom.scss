@@ -25,13 +25,6 @@ h4 { margin: $h4-font-size * 0.6667 0 $h4-font-size * 0.4 0; }
 h5 { margin: $h5-font-size * 0.6667 0 $h5-font-size * 0.4 0; }
 h6 { margin: $h6-font-size * 0.6667 0 $h6-font-size * 0.4 0; }
 
-// Bootstrap lädt keine eigene Icon-Schrift; Material Icons kommt aus dem
-// Google-Fonts-Link in head.html, dieser Zusatz ist nur für mobile Browser.
-.material-icons {
-  text-rendering: optimizeLegibility;
-  font-feature-settings: "liga";
-}
-
 body {
   color: $lt-text-color;
   background-color: $lt-background-color;

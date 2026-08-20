@@ -26,6 +26,15 @@
 @import "bootstrap/helpers";
 @import "bootstrap/utilities/api";
 
+// Font Awesome: nur Solid-Stil, da die Seite keine anderen Stile nutzt
+// (kein Regular/Brands, spart Schriftdateien und CSS).
+@import "font-awesome/functions";
+@import "font-awesome/variables";
+@import "font-awesome/mixins";
+@import "font-awesome/core";
+@import "font-awesome/icons";
+@import "font-awesome/solid";
+
 // eigene Anpassungen
 // (main/main-dark hießen ursprünglich so, wurden aber umbenannt: der
 // Dateiname kollidierte mit dem dieser Datei selbst (main.scss) und
