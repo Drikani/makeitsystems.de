@@ -1,0 +1,31 @@
+.eupopup-container {
+	text-align: center;
+	display: none;
+	z-index: 9999999;
+	p {
+		padding-bottom: 1em;
+	}
+	.card-action {
+		padding-bottom: 0 !important;
+	}
+	.card-content {
+		padding-bottom: 0 !important;
+	}
+	.btn {
+		color: white;
+	}
+}
+
+.eupopup-container-bottomleft {
+	position: fixed !important;
+	@media #{$medium-and-down} {
+		bottom: 0.1em;
+		margin-left: 1em !important;
+		right: 1em;
+	}
+	@media #{$large-and-up} {
+		bottom: 10px; 
+		left: 10px; 
+		width: 30em;
+	}
+}

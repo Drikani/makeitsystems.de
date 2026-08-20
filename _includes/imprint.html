@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col s12 m6">
+    <h2 class="section-title">
+      <span>
+        <i class="material-icons">star</i>
+        Impressum
+      </span>
+    </h2>
+    {% include imprint/imprint.html %}
+  </div>
+  <div class="col s12 m6">
+    <h2 class="section-title">
+      <span>
+        <i class="material-icons">attach_file</i>
+        Quellen
+      </span>
+    </h2>
+    {% include imprint/source.html %}
+  </div>
+</div>
+<h2 class="section-title">
+  <span>
+    <i class="material-icons">gavel</i>
+    Datenschutz
+  </span>
+</h2>
+<div id="grid" data-columns>
+  <!-- dislcaimer -->
+  {% include imprint/disclaimer.html %}
+  <!-- ssl -->
+  {% include imprint/SSL.html %}
+  <!-- imprint -->
+  {% include imprint/cookies.html %}
+  <!-- logs -->
+  {% include imprint/logs.html %}
+  <!-- linkedin -->
+  {% include imprint/linkedin.html %}
+  <!-- twitter -->
+  {% include imprint/twitter.html %}
+  <!-- rights -->
+  {% include imprint/rights.html %}
+  <!-- ads -->
+  {% include imprint/ads.html %}
+</div>

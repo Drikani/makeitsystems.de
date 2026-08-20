@@ -1,0 +1,49 @@
+// 1. Theme - Light
+// ==========================================================================
+$lt-text-color: color("blue-grey", "darken-4") !default;
+$lt-background-color: color("grey", "lighten-2") !default;
+$lt-bg-color-alt: color("grey", "lighten-3") !default;
+
+$lt-color-primary: color("blue", "darken-3") !default;
+$lt-color-accent: color("blue", "darken-4") !default;
+$lt-color-alt1: color("indigo", "lighten-4") !default;
+
+$lt-link-color-hover: color("blue", "darken-1") !default;
+$lt-link-color-visited: color("indigo", "darken-3") !default;
+
+$lt-shade-lighten-1: color("grey", "lighten-1") !default;
+$lt-shade-lighten-2: color("grey", "lighten-2") !default;
+$lt-shade-lighten-3: color("grey", "lighten-3") !default;
+$lt-shade-lighten-4: color("grey", "lighten-4") !default;
+$lt-shade-lighten-5: color("grey", "lighten-5") !default;
+
+$lt-shade-darken-1: color("grey", "darken-1") !default;
+$lt-shade-darken-2: color("grey", "darken-2") !default;
+$lt-shade-darken-3: color("grey", "darken-3") !default;
+$lt-shade-darken-4: color("grey", "darken-4") !default;
+
+// 2. Theme - Dark
+// ==========================================================================
+$dt-text-color: color("grey", "lighten-2") !default;
+$dt-background-color: color("blue-grey", "darken-4") !default;
+$dt-bg-color-alt1: color("blue-grey", "darken-3") !default;
+$dt-bg-color-alt2: color("blue-grey", "darken-2") !default;
+
+$dt-color-primary: color("deep-orange", "darken-3") !default;
+$dt-color-accent: color("deep-orange", "darken-4") !default;
+$dt-color-alt: color("deep-orange", "base") !default;
+
+$dt-link-color-hover: color("deep-orange", "darken-1") !default;
+$dt-link-color-visited: color("amber", "darken-4") !default;
+
+$dt-shade-lighten-1: color("grey", "lighten-1") !default;
+$dt-shade-lighten-2: color("grey", "lighten-2") !default;
+$dt-shade-lighten-3: color("grey", "lighten-3") !default;
+$dt-shade-lighten-4: color("grey", "lighten-4") !default;
+$dt-shade-lighten-5: color("grey", "lighten-5") !default;
+
+$dt-shade-darken-1: color("grey", "darken-1") !default;
+$dt-shade-darken-2: color("grey", "darken-2") !default;
+$dt-shade-darken-3: color("grey", "darken-3") !default;
+$dt-shade-darken-4: color("grey", "darken-4") !default;
+

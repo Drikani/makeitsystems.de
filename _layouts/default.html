@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="eupopup">
+    <!-- header -->
+      {% include header.html %}
+
+    <!-- content -->
+      <div class="row">
+        {% include nav.html %}
+        {{ content }}
+      </div>
+
+    <!-- footer -->
+    {% include footer.html %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/salvattore.js"></script>
+    <script src="js/cookiepopup.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('ul.tabs').tabs();
+      });
+    </script>
+  </body>
+</html>
