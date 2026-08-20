@@ -2,7 +2,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#1565C0">
+  <!-- Färbt u.a. unter iOS/macOS Safari die Adress-/Tab-Leiste passend zum
+       jeweiligen Farbschema ein (siehe site.theme_color in _config.yml). -->
+  <meta name="theme-color" content="{{ site.theme_color.light }}" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="{{ site.theme_color.dark }}" media="(prefers-color-scheme: dark)">
 
   {% assign page_title = site.title | escape %}
   {% if page.title %}{% assign page_title = page.title | escape | append: " - " | append: page_title %}{% endif %}

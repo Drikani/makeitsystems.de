@@ -30,6 +30,16 @@ contact:
 # das aktuelle Jahr wird zur Build-Zeit automatisch ergänzt.
 copyright_start_year: 2019
 
+# Für die theme-color-Meta-Tags in head.html (färbt u.a. unter iOS/macOS
+# Safari die Adresszeile ein). Muss zu $lt-color-primary/$dt-color-primary
+# in _sass/_main-variables.scss passen – dort ist es die tatsächliche
+# Sass-Quelle (color("blue"/"deep-orange", "darken-3")), hier nur der
+# kompilierte Hex-Wert, weil Jekyll-Config und Sass sich sonst nicht
+# gegenseitig referenzieren können.
+theme_color:
+  light: "#1565C0"
+  dark: "#D84315"
+
 # Build settings.
 markdown: kramdown
 exclude: ["README.md"]
