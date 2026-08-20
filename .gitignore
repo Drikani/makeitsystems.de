@@ -4,9 +4,6 @@ _site/
 .jekyll-metadata
 .sass-cache/
 
-# jekyll-twitter-plugin
-.tweet-cache/
-
 # Bundler
 .bundle/
 vendor/bundle/
