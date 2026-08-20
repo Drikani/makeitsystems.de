@@ -50,6 +50,11 @@ strong {
   color: $lt-color-primary !important;
 }
 
+// Abstand zwischen Seiteninhalt und Footer (fehlte bisher komplett).
+.content-wrapper {
+  padding-bottom: 2rem;
+}
+
 footer {
   background-color: $lt-color-primary !important;
   text-align: center;
@@ -162,9 +167,21 @@ footer {
   background-color: $lt-bg-color-alt !important;
 }
 
+// display: block statt Bootstraps Standard, da wir die Klasse auf <span>
+// statt einer Überschrift verwenden – als Inline-Element ging der Titel
+// bisher optisch im folgenden Absatz unter.
 .card-title {
-  border-bottom: 1px solid $lt-shade-darken-4;
+  display: block;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid $lt-shade-darken-4;
   color: $lt-color-primary;
+  font-size: 1.15rem;
+  font-weight: 700;
+
+  i {
+    margin-right: 0.4rem;
+  }
 }
 
 // Ersetzt salvattore.js, kein JS mehr nötig. Natives CSS-Grid-Masonry
