@@ -57,14 +57,12 @@ title: Impressum
         Datenschutz
       </span>
     </h2>
-    <div id="grid" data-columns>
+    <div class="masonry">
       {% for section in site.data.privacy_sections %}
-      <div class="item">
-        <div class="card">
-          <div class="card-body">
-            <span class="card-title">{{ section.title }}</span>
-            {{ section.body }}
-          </div>
+      <div class="card">
+        <div class="card-body">
+          <span class="card-title">{{ section.title }}</span>
+          {{ section.body }}
         </div>
       </div>
       {% endfor %}

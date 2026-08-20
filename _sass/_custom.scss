@@ -169,12 +169,38 @@ footer {
 }
 
 .card {
+  // Bootstraps .card-body { color: var(--bs-card-color); } fällt, da diese
+  // Variable bei uns leer ist, auf --bs-body-color zurück (immer der
+  // Light-Mode-Wert, unabhängig vom Farbschema) statt zu erben. Deshalb hier
+  // explizit setzen statt uns auf Vererbung von body zu verlassen.
+  color: $lt-text-color;
   background-color: $lt-bg-color-alt !important;
 }
 
 .card-title {
   border-bottom: 1px solid $lt-shade-darken-4;
   color: $lt-color-primary;
+}
+
+// Ersetzt salvattore.js: reines CSS-Multi-Column-Layout statt JS-Grid-Lib.
+// Native CSS-Masonry (grid-template-rows: masonry) ist Mitte 2026 erst in
+// Safari ungeflaggt verfügbar, Chrome/Firefox noch hinter Flags – für
+// produktiven Einsatz also noch nicht verlässlich genug.
+.masonry {
+  column-count: 1;
+  column-gap: 1rem;
+
+  @include media-breakpoint-up(sm) {
+    column-count: 2;
+  }
+  @include media-breakpoint-up(lg) {
+    column-count: 3;
+  }
+
+  > * {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
 }
 
 // Bootstrap kennt keine Chips; Maße entsprechen Materializes bisherigem .chip.
