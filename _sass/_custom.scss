@@ -182,10 +182,12 @@ footer {
   color: $lt-color-primary;
 }
 
-// Ersetzt salvattore.js: reines CSS-Multi-Column-Layout statt JS-Grid-Lib.
-// Native CSS-Masonry (grid-template-rows: masonry) ist Mitte 2026 erst in
-// Safari ungeflaggt verfügbar, Chrome/Firefox noch hinter Flags – für
-// produktiven Einsatz also noch nicht verlässlich genug.
+// Ersetzt salvattore.js, kein JS mehr nötig. Natives CSS-Grid-Masonry
+// (grid-template-rows: masonry) ist Mitte 2026 erst in Safari ungeflaggt
+// verfügbar, Chrome/Firefox noch hinter Flags – daher per @supports nur dort
+// aktiv, alle anderen Browser bekommen ein Mehrspalten-Layout als Fallback,
+// das ebenfalls kein JS braucht. Sobald grid-template-rows: masonry breiter
+// unterstützt ist, greift es automatisch überall.
 .masonry {
   column-count: 1;
   column-gap: 1rem;
@@ -201,6 +203,33 @@ footer {
     break-inside: avoid;
     margin-bottom: 1rem;
   }
+
+  @supports (grid-template-rows: masonry) or (display: grid-lanes) {
+    display: grid;
+    column-count: initial;
+    column-gap: initial;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: masonry;
+    gap: 1rem;
+
+    @include media-breakpoint-up(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    > * {
+      break-inside: initial;
+      margin-bottom: 0;
+    }
+  }
+
+  // Zukünftige Syntax (siehe https://dev.to/bean_bean/css-grid-lanes-masonry-layout-is-here-a-complete-guide-for-2026-4686):
+  // display: grid-lanes ersetzt irgendwann grid-template-rows: masonry.
+  // Sobald Browser das @supports (display: grid-lanes) tatsächlich mit
+  // eigener Grid-Lanes-Syntax erfüllen (aktuell noch hinter Flags), hier
+  // ergänzen statt nur auf die masonry-Variante zu verlassen.
 }
 
 // Bootstrap kennt keine Chips; Maße entsprechen Materializes bisherigem .chip.
