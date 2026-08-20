@@ -26,7 +26,7 @@ Standard Jekyll layout/include structure, but the entire site is a single page (
 - [_includes/resume/](_includes/resume) and [_includes/imprint/](_includes/imprint) hold sub-includes for each section (e.g. `hardskills.html`, `softskills.html`, `timeline.html`; `imprint.html`, `SSL.html`, `cookies.html`, `disclaimer.html`, `rights.html`, `logs.html`, `ads.html`, `twitter.html`, `linkedin.html`, `source.html`) — pulled in by the corresponding top-level include.
 - Styling is Sass under [_sass/](_sass) (a bundled/customized Materialize CSS build) compiled from [css/materialize.scss](css/materialize.scss); `_config.yml` sets `sass_dir: _sass` and `style: compact`.
 - Static assets (images) live in [assets/](assets); vendored/plain JS (jQuery, Materialize, salvattore, cookie popup, color-scheme detection) lives in [js/](js) and is included directly via `<script>` tags, not bundled.
-- `_site/` is the Jekyll build output and is not tracked in git.
+- `_site/` is the Jekyll build output and **is tracked in git** (unusual for Jekyll, but that's how this repo is set up). It was stale relative to `_includes/` as of the Ruby toolchain update — rebuild with `bundle exec jekyll build` and commit the result if you need it back in sync.
 
 When editing page content, edit the relevant include under `_includes/` (or its `resume/`/`imprint/` subfolder) rather than `index.html`, which only wires the three sections together.
 
